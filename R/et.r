@@ -1,6 +1,6 @@
 #' Tables variables
 #'
-#' Creates a table for a variable, mimicking `count()` (from 'dplyr'). ET stands for exploratory table.
+#' Creates a table for a variable, mimicking `count()` from 'dplyr'. ET stands for exploratory table or easy table.
 #' @param data_frame the data.frame
 #' @param variable_name the variable name
 #'
@@ -13,7 +13,7 @@
 #' 
 #' # define country
 #' nhanes<-nhanes |> transform(
-#'   country=base_match(nhanes$dmdborn4,'USA'=1,'Other'=2)
+#'   country=base_match(dmdborn4,'USA'=1,'Other'=2)
 #' )
 #' 
 #' # examine variable, with native piping
