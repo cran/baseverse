@@ -13,6 +13,9 @@
 #' 
 #' # summarize lbxtc
 #' nhanes |> dollar(lbxtc) |> summary()
+#' 
+#' # obtain confidence interval for bpxosy1
+#' nhanes |> p_t.test(bpxosy1) |> dollar(conf.int)
 dollar<-function(data_object,variable_name){
 
   variable_string<-deparse(substitute(variable_name))

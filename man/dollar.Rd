@@ -23,4 +23,7 @@ data(nhanes)
 
 # summarize lbxtc
 nhanes |> dollar(lbxtc) |> summary()
+
+# obtain confidence interval for bpxosy1
+nhanes |> p_t.test(bpxosy1) |> dollar(conf.int)
 }

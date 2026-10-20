@@ -337,14 +337,15 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<h1 class="title toc-ignore">An introduction to <em>baseverse</em></h1>
+<h1 class="title toc-ignore">An introduction to
+<code>baseverse</code></h1>
 
 
 
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p><em>baseverse</em> is intended to be a relatively minimal suite of
-packages, supporting the use of base R with native piping.</p>
+<p><code>baseverse</code> is intended to be a relatively minimal suite
+of packages, supporting the use of base R with native piping.</p>
 <p>Several functions are wrapper functions for existing base-R
 functions, adding support for native piping:</p>
 <ul>
@@ -360,10 +361,10 @@ functions, adding support for native piping:</p>
 features:</p>
 <ul>
 <li><code>bang()</code>: is a wrapper for <code>!</code>, and is similar
-to <code>not()</code> from <em>magrittr</em></li>
+to <code>not()</code> from <code>magrittr</code></li>
 <li><code>bracket()</code>: is a wrapper for <code>[]</code></li>
 <li><code>dollar()</code>: is a wrapper for <code>$</code>, and is
-similar to <code>pull()</code> from <em>dplyr</em></li>
+similar to <code>pull()</code> from <code>dplyr</code></li>
 </ul>
 <p>Other functions mimic tidyverse functions:</p>
 <ul>
@@ -415,11 +416,11 @@ behavior</a> from <code>case_match()</code>.</p>
 <h2>Total cholesterol</h2>
 <p>Summarize the <code>lbxtc</code> variable:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>nhanes<span class="sc">$</span>lbxtc <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs 
 ##    62.0   151.0   178.0   181.5   207.0   438.0    5043</code></pre>
 <p>Or, using <code>dollar()</code>:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>nhanes <span class="sc">|&gt;</span> <span class="fu">dollar</span>(lbxtc) <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs 
 ##    62.0   151.0   178.0   181.5   207.0   438.0    5043</code></pre>
 <p>Create a categorical variable for total cholesterol:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>nhanes<span class="ot">&lt;-</span>nhanes <span class="sc">|&gt;</span></span>

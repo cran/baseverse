@@ -1,33 +1,28 @@
-# Overview
+## Overview
 
-*baseverse* is a collection of functions intended to support the continued use of base R in a modern era. There are two main types of functions included in the package:
+`baseverse` is a collection of functions intended to support the continued use of base R in the modern era. The package includes three main types of functions:
 
-- **wrapper functions** to existing base-R functions: These begin with `p_` and support native piping. For example, `p_lm()` is a wrapper to `lm()` supporting native piping.
-- **functions that mimic tidyverse** functions: These include `base_match()` and `base_when()` (see section below).
+- **wrapper functions for existing base-R functions**: These begin with `p_` and support native piping. For example, `p_lm()` is a wrapper for `lm()` supporting native piping.
+- **wrapper functions for existing base-R features**: These are named after the underlying symbols. For example, `dollar()` is a wrapper for dollar-sign notation.
+- **functions that mimic tidyverse functions**: These include `base_match()` and `base_when()`, which mimic `case_match()` and `case_when()` from `dplyr`. Unlike their `dplyr` counterparts, `base_match()` and `base_when()` will honor the user's desired order of groups (see the discussion in the [section below](#base_match-and-base_when)). 
 
-# Installation
+## Installation
 
-The package is now available on CRAN! 🥳 
+The package is now available [on CRAN](https://CRAN.R-project.org/package=baseverse)! 🥳 
 
-To install the GitHub version instead (which may be more recent than the CRAN version), first install *remotes* if you don't already have it:
-
-```r
-install.packages('remotes')
-```
-
-Then, install the *baseverse* package using `install_github()`:
+To install the package from CRAN:
 
 ```r
-remotes::install_github('yea-hung/baseverse')
+install.packages('baseverse')
 ```
 
-# Suggestions and future directions
+## Getting started
 
-Please don't hesitate to contribute if you have ideas for expanding this!
+The package includes [a vignette](https://CRAN.R-project.org/package=baseverse/vignettes/introduction.html).
 
-# `base_match()` and `base_when()`
+## `base_match()` and `base_when()`
 
-## Motivation
+### Motivation
 
 As [mentioned elsewhere](https://github.com/tidyverse/funs/issues/72), `case_match()` and `case_when()` do not return a factor. A [typical tidyverse solution](https://stackoverflow.com/questions/49572416/r-convert-to-factor-with-order-of-levels-same-with-case-when) for getting a factor out of `case_match()` with the levels in a desired order is something like this:
  
@@ -41,7 +36,7 @@ nhanes<-nhanes %>%
   )
 ```
 
-In this sort of solution, we have to type the level labels twice. The first occurrence defines the label-level mapping, while the second occurrence defines the order of the levels. I think this is inefficient.
+In this sort of solution, we have to type the level labels twice. The first occurrence defines the label-level mapping, while the second occurrence defines the order of the levels. I think this is inefficient and unnecessarily introduces the possibility of human error.
 
 Compare the above with the following base-R solution:
 
@@ -55,7 +50,7 @@ Here, we only have to type the level labels once: that one occurrence defines bo
 
 My starting principle in writing `base_match()` and `base_when()` is that one should only have to type the level labels once.
 
-## Examples
+### Examples
 
 `base_match()` using native piping:
 
@@ -76,6 +71,7 @@ nhanes<-nhanes |>
     )
   )
 ```
-## Warning
 
-Despite the cute name, `base_when()` does not exactly mimic `case_when()`, and I do not intend it to. A key difference is `base_when()` will evaluate all conditions defined in `conditions` whereas `case_when()` will, for each position, stop when a condition is met.
+### Further details
+
+`base_when()` does not exactly mimic `case_when()`, and I do not intend it to. A key difference is `base_when()` will evaluate all conditions defined in `conditions` whereas `case_when()` will, for each position, stop when a condition is met.

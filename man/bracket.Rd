@@ -15,12 +15,8 @@ bracket(data_object, index)
 a subset of the data
 }
 \description{
-A wrapper function for bracket notation. The function only allows one index; for two-dimensional objects, the index is used on the columns.
+A wrapper function for bracket notation on one-dimensional objects.
 }
 \examples{
-# load package
-data(nhanes)
-
-# look at the first few values of dmdborn4
-nhanes |> bracket('dmdborn4') |> head()
+c(a=1,b=2,c=3) |> bracket(c('b','a'))
 }

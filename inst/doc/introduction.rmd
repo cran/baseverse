@@ -1,5 +1,5 @@
 ---
-title: 'An introduction to *baseverse*'
+title: 'An introduction to `baseverse`'
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{An introduction to baseverse}
@@ -9,7 +9,7 @@ vignette: >
 
 ## Overview
 
-*baseverse* is intended to be a relatively minimal suite of packages, supporting the use of base R with native piping. 
+`baseverse` is intended to be a relatively minimal suite of packages, supporting the use of base R with native piping. 
 
 Several functions are wrapper functions for existing base-R functions, adding support for native piping:
 
@@ -22,9 +22,9 @@ Several functions are wrapper functions for existing base-R functions, adding su
 
 Other functions are wrapper functions for existing base-R features:
 
-- `bang()`: is a wrapper for `!`, and is similar to `not()` from *magrittr*
+- `bang()`: is a wrapper for `!`, and is similar to `not()` from `magrittr`
 - `bracket()`: is a wrapper for `[]`
-- `dollar()`: is a wrapper for `$`, and is similar to `pull()` from *dplyr*
+- `dollar()`: is a wrapper for `$`, and is similar to `pull()` from `dplyr`
 
 Other functions mimic tidyverse functions:
 
