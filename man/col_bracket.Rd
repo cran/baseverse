@@ -4,12 +4,14 @@
 \alias{col_bracket}
 \title{Subsets a data using bracket notation}
 \usage{
-col_bracket(data_object, index)
+col_bracket(data_object, index, ...)
 }
 \arguments{
 \item{data_object}{a data object}
 
 \item{index}{a character, logical, or numeric vector}
+
+\item{...}{additional arguments passed to \code{[}}
 }
 \value{
 a subset of the data
